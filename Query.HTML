@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query.HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            border: 1px solid #767676;
+            padding: 2px;
+        }
+        button {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 2px 6px;
+            cursor: pointer;
+        }
+        ul, ol {
+            margin-top: 5px;
+            padding-left: 25px;
+        }
+        img {
+            display: block;
+            margin-bottom: 5px;
+            width: 20px; /* शुरुआती छोटा साइज */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Query -->
+    <h1>Query</h1>
+    <p>Click the button below to change the image's dimension.</p>
+    <!-- यहाँ इमेज का सोर्स खाली है ताकि इमेज टूटी हुई (broken) दिखे जैसा कि फोटो में है -->
+    <img id="plushie-img" src="" alt="Rainbow Dash Plushie">
+    <button onclick="makeItBigger()">Make it bigger!</button>
+
+    <!-- Section 2: Last -->
+    <h1>Last</h1>
+    <p>Type anything below, then click the button to replace the letters with something else.</p>
+    <p>Type here: <input type="text" id="text-input"></p>
+    <button onclick="replaceText()">Replace it with another text</button>
+
+    <!-- Section 3: Text -->
+    <h1>Text</h1>
+    <p>Click the button below to change the text to another text.</p>
+    <p id="mlp-text"><strong>MLP: FiM is an awesome show.</strong></p>
+    <button onclick="changeShowText()">You're correct!</button>
+
+    <!-- Section 4: To-Do List -->
+    <h2>To-Do List</h2>
+    <ol>
+        <li>Wake up</li>
+        <li>Exercise</li>
+        <li>Read a book</li>
+    </ol>
+    <ul>
+        <li>Push-ups (3 sets of 15)</li>
+        <li>Squats (3 sets of 20)</li>
+    </ul>
+
+    <!-- JavaScript Functions for Buttons -->
+    <script>
+        // 1. इमेज का साइज बड़ा करने के लिए
+        function makeItBigger() {
+            var img = document.getElementById('plushie-img');
+            img.style.width = "100px"; 
+        }
+
+        // 2. इनपुट बॉक्स के टेक्स्ट को बदलने के लिए
+        function replaceText() {
+            var input = document.getElementById('text-input');
+            if(input.value !== "") {
+                input.value = "Something else";
+            }
+        }
+
+        // 3. MLP वाले टेक्स्ट को बदलने के लिए
+        function changeShowText() {
+            var textElement = document.getElementById('mlp-text');
+            textElement.innerHTML = "<strong>Text has been changed successfully!</strong>";
+        }
+    </script>
+
+</body>
+</html>
